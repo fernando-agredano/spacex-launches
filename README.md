@@ -47,7 +47,7 @@ Una vez iniciado el proyecto en el navegador:
 5. Agrega tu clave en el archivo de entorno `.env` o `.env.local` como:
 
 ```env
-VITE_GOOGLE_MAPS_API_KEY=tu_clave_aquí
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=tu_clave_aquí
 ```
 
 ---
