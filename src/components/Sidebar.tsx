@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import api from "@/lib/axios"; // Usamos instancia
+import api from "@/lib/axios";
 
 interface SidebarProps {
   year: string;
@@ -22,7 +22,7 @@ export default function Sidebar({
 }: SidebarProps) {
   const [rockets, setRockets] = useState<string[]>([]);
 
-  // useEffect para cargar los nombres de los cohetes desde la API al montar el componente
+  // Cargar los nombres de los cohetes desde la API al montar el componente
   useEffect(() => {
     const fetchRockets = async () => {
       try {
@@ -42,16 +42,29 @@ export default function Sidebar({
   );
 
   return (
-    <aside className="w-64 bg-secondary/80 p-6 rounded-2xl shadow-xl space-y-6">
-      <h2 className="text-xl font-semibold mb-4 text-primary">Filtros</h2>
+    <aside
+      className="
+        bg-secondary/80 
+        p-4 sm:p-3
+        rounded-2xl shadow-xl 
+        space-y-6
+      "
+    >
+      <h2 className="text-lg font-semibold mb-2 text-primary">Filtros</h2>
 
-      {/* Filtrar por año */}
+      {/* Año */}
       <div>
-        <label className="block text-sm text-foreground/70 mb-2">Año</label>
+        <label className="block text-xs sm:text-sm text-foreground/70 mb-1">
+          Año
+        </label>
         <select
           value={year}
           onChange={(e) => setYear(e.target.value)}
-          className="w-full p-2 rounded-lg bg-background text-foreground border border-foreground/20"
+          className="
+            w-24 p-1 text-sm sm:w-full sm:p-2 sm:text-base
+            rounded-lg bg-background text-foreground
+            border border-foreground/20 
+          "
         >
           <option value="">Todos</option>
           {years.map((y) => (
@@ -62,15 +75,19 @@ export default function Sidebar({
         </select>
       </div>
 
-      {/* Filtar por Resultado */}
+      {/* Resultado */}
       <div>
-        <label className="block text-sm text-foreground/70 mb-2">
+        <label className="block text-xs sm:text-sm text-foreground/70 mb-1">
           Resultado
         </label>
         <select
           value={result}
           onChange={(e) => setResult(e.target.value)}
-          className="w-full p-2 rounded-lg bg-background text-foreground border border-foreground/20"
+          className="
+            w-24 p-1 text-sm sm:w-full sm:p-2 sm:text-base
+            rounded-lg bg-background text-foreground
+            border border-foreground/20 
+          "
         >
           <option value="">Todos</option>
           <option value="success">Éxito</option>
@@ -78,13 +95,19 @@ export default function Sidebar({
         </select>
       </div>
 
-      {/* Filtrar por Cohete */}
+      {/* Cohete */}
       <div>
-        <label className="block text-sm text-foreground/70 mb-2">Cohete</label>
+        <label className="block text-xs sm:text-sm text-foreground/70 mb-1">
+          Cohete
+        </label>
         <select
           value={rocket}
           onChange={(e) => setRocket(e.target.value)}
-          className="w-full p-2 rounded-lg bg-background text-foreground border border-foreground/20"
+          className="
+            w-24 p-1 text-sm sm:w-full sm:p-2 sm:text-base
+            rounded-lg bg-background text-foreground
+            border border-foreground/20 
+          "
         >
           <option value="">Todos</option>
           {rockets.map((r) => (

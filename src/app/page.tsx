@@ -9,11 +9,10 @@ import { useState } from "react";
 export default function Home() {
   const { launches, loading, error } = useLaunches();
 
-  // Estados para filtros y búsqueda
-  const [search, setSearch] = useState(""); // Texto a buscar por nombre
-  const [year, setYear] = useState(""); // Filtro de año
-  const [result, setResult] = useState(""); // Filtro de resultado (éxito/fracaso)
-  const [rocket, setRocket] = useState(""); // Filtro de cohete
+  const [search, setSearch] = useState("");
+  const [year, setYear] = useState("");
+  const [result, setResult] = useState("");
+  const [rocket, setRocket] = useState("");
 
   const filtered = launches.filter((launch) => {
     // 1) Filtro por nombre: compara texto ingresado con el nombre del lanzamiento
@@ -43,7 +42,7 @@ export default function Home() {
 
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar (panel de filtros) */}
-        <div className="w-64 shrink-0 overflow-y-auto bg-secondary/80 p-6">
+        <div className="w-40 md:w-64 sm:w-64 shrink-0 overflow-y-auto bg-secondary/80 p-6">
           <Sidebar
             year={year}
             result={result}

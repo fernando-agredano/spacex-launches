@@ -15,26 +15,27 @@ export default function Navbar({
   return (
     <nav className="bg-secondary px-6 py-4 flex justify-between items-center shadow-lg">
       <div className="flex items-center gap-2 text-primary text-xl font-bold">
-        <Rocket size={28} /> SpaceX Launches
+        <Rocket size={28} />
+        <span className="hidden sm:inline">SpaceX Launches</span>
       </div>
 
-      <div className="flex items-center bg-background rounded-xl px-3 py-1 w-72 border border-foreground/20">
+      <div className="flex items-center bg-background rounded-xl px-3 py-1 w-42 md:w-72 border border-foreground/20">
         <Search className="text-foreground/60" />
         <input
           type="text"
           placeholder="Buscar misión..."
-          className="bg-transparent text-foreground outline-none px-2 w-full"
+          className="bg-transparent text-foreground outline-none px-2 w-full text-sm sm:text-base"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 text-sm sm:text-base">
         <button
           onClick={() => router.push("/mapa")}
           className="flex items-center gap-1 text-foreground hover:text-primary transition"
         >
-          <MapPin size={20} /> Mapa
+          <MapPin size={20} /> <span className="hidden sm:inline">Mapa</span>
         </button>
 
         {pathname !== "/favoritos" && (
@@ -42,7 +43,8 @@ export default function Navbar({
             onClick={() => router.push("/favoritos")}
             className="flex items-center gap-1 text-foreground hover:text-primary transition"
           >
-            <Star size={20} /> Favoritos
+            <Star size={20} />{" "}
+            <span className="hidden sm:inline">Favoritos</span>
           </button>
         )}
 
@@ -51,7 +53,7 @@ export default function Navbar({
             onClick={() => router.push("/")}
             className="flex items-center gap-1 text-foreground hover:text-primary transition"
           >
-            <Home size={20} /> Inicio
+            <Home size={20} /> <span className="hidden sm:inline">Inicio</span>
           </button>
         )}
       </div>
