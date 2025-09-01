@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 SpaceX Launches
 
-## Getting Started
+Aplicación web desarrollada con **Next.js**, **React** y **TypeScript** que permite consultar y explorar información sobre los lanzamientos de **SpaceX**.  
+El proyecto incluye funcionalidades de filtrado, gestión de favoritos y una vista de mapa interactivo para ubicar los sitios de lanzamiento.
 
-First, run the development server:
+---
+
+## 📦 Instalación
+
+Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
 
 ```bash
+# 1. Clonar el repositorio
+git clone https://github.com/tu-usuario/spacex-launches.git
+cd spacex-launches
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Ejecutar el servidor en modo desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧑‍💻 Instrucciones de uso
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Una vez iniciado el proyecto en el navegador:
 
-## Learn More
+1. **Listado de lanzamientos:** Observaras una lista con información relevante de cada lanzamiento de SpaceX.
+2. **Filtros:** Tendras la posibilidad de filtrar los lanzamientos por nombre de la mision, fecha, el resultado de la mision o el modelo del cohete empleado.
+3. **Favoritos:** Haz clic en el icono de estrella ⭐ para marcar un lanzamiento como favorito.
+4. **Mapa:** Accede al mapa de Google Maps para visualizar las bases de lanzamiento y todos aquellos lanzamientos llevados a cabo en dichas bases.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚠️ Consideraciones adicionales
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Necesitas una clave de API de Google Maps para utilizar la vista del mapa.
 
-## Deploy on Vercel
+### ¿Cómo obtener una clave de Google Maps?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Ve a [Google Cloud Console](https://console.cloud.google.com/).
+2. Crea un nuevo proyecto (o usa uno existente).
+3. Habilita la API de Maps JavaScript.
+4. Crea una clave de API en la sección "Credenciales".
+5. Agrega tu clave en el archivo de entorno `.env` o `.env.local` como:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+VITE_GOOGLE_MAPS_API_KEY=tu_clave_aquí
+```
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- **React 19** – Librería principal para construir la interfaz.
+- **Vite** – Bundler para desarrollo rápido.
+- **TypeScript** – Tipado estático.
+- **MUI** – Componentes de UI modernos.
+- **SWR** – Fetching de datos con caching y revalidación.
+- **Axios** – Cliente HTTP.
+- **Google Maps API** – Mapa interactivo con marcadores.
+- **Tailwind CSS** – Estilado rápido y responsive.
+- **Date-fns** – Utilidades para manejar fechas.
+
+---
+
+## ✅ Scripts disponibles
+
+```bash
+npm run dev       # Ejecuta la app en modo desarrollo
+npm run build     # Compila la app para producción
+npm run preview   # Previsualiza la versión de producción localmente
+npm run lint      # Ejecuta ESLint para verificar errores
+```
